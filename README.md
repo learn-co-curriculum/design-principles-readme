@@ -38,7 +38,7 @@ The study of and refinement of the principles of object oriented design will tak
 
 ### The Single Responsibility Principle and Separation of Concerns
 
-The single responsibility principle is the idea that classes in object oriented programming should have one job, one responsibility, and their services (i.e., methods) should be narrowly aligned with that responsibility. This principle goes hand in hand with the separation of concerns––the idea that the various responsibilities, or concerns, of a computer program should be separated out into discrete sections. 
+The single responsibility principle is the idea that classes in object-oriented programming should have one job, one responsibility, and their services (i.e., methods) should be narrowly aligned with that responsibility. This principle goes hand in hand with the separation of concerns––the idea that the various responsibilities, or concerns, of a computer program should be separated out into discrete sections. 
 
 Let's take the example of an online shopping web application. Such an application has a number of jobs to handle: we need to have users that sign in and purchase items, we have the items themselves that we are selling, we likely have a shopping cart as well. We could develop an application that that takes care of all of these jobs in the following manner: 
 
@@ -108,7 +108,7 @@ end
 
 In the above method, we are using an if/elsif statement to determine what kind of discount a user has, if any, and then doing some math to calculate the appropriate total. In order to take a discount into account, we are using six lines of code every time we checkout a user! That's a lot of repetition. Additionally, what if our application needs to apply coupons to a user's total *before* they checkout? Maybe our client has decided to give their user's 20% on their current total if they refer a friend to the site. We would have to use the same if/elsif statement elsewhere in our code. That's a lot of code to constantly re-type. 
 
-**Top-Tip:** If you find yoursel copy/pasting the same lines of code more than three times in order to re-use it throughout your program, consider it a "code smell". A code smell is a sign that you should refactor.
+**Top-Tip:** If you find yourself copy/pasting the same lines of code more than three times in order to re-use it throughout your program, consider it a "code smell". A code smell is a sign that you should refactor.
 
 Let's refactor this by creating a `coupon` attr_accessor. Then, our checkout method can simply use the coupon method to help it calculate the user's total:
 
@@ -162,7 +162,7 @@ Sure enough, a quick google search of "sum an array of value ruby" returns some 
 ```ruby
 def checkout
   total = shopping_cart.inject {|sum, item| sum + item.price}
-  
+  total = coupon/total if coupon
   ...
 end
 ```
@@ -171,7 +171,7 @@ Much better!
 
 ## Conclusion
 
-This has been a very brief intro into the what, why and how of design principles in object oriented Ruby. These principles are meant to guide you, not limit you. These principles are also just the very tip of the OO design iceberg. You'll learn more about design over the remainder of this course and you'll learn even more about design over the course of the rest of your programming life. Check out the resource below, Sandi Metz's book on object oriented design, to go  deeper. This book is a great resource. It is highly respected among object oriented Rubyists and you'll likely encounter the principles she discusses in your professional programming life. Even if you don't read it all now, try the first few chapters and then go deeper into it after you've learned more. 
+This has been a very brief intro into the what, why and how of design principles in object oriented Ruby. These principles are meant to guide you, not limit you. These principles are also just the very tip of the OO design iceberg. You'll learn more about design over the remainder of this course and you'll learn even more about design over the course of the rest of your programming life. Check out the resource below, Sandi Metz's book on object-oriented design, to go deeper. This book is a great resource. It is highly respected among object-oriented Rubyists and you'll likely encounter the principles she discusses in your professional programming life. Even if you don't read it all now, try the first few chapters and then go deeper into it after you've learned more. 
 
 ## Resources
 
