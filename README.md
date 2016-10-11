@@ -6,6 +6,8 @@
 2. Explain why design principles are important for you as a programmer.
 3. Learn some of the basic design principles that object orientated programmers employ. 
 
+test ignore
+
 
 ## What is Code Design and Why Implement It?
 
